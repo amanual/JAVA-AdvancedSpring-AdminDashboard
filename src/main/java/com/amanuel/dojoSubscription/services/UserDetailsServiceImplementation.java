@@ -1,4 +1,4 @@
-package com.amanuel.loginRegistration.services;
+package com.amanuel.dojoSubscription.services;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,9 +10,9 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import com.amanuel.loginRegistration.models.Role;
-import com.amanuel.loginRegistration.models.User;
-import com.amanuel.loginRegistration.repositories.UserRepository;
+import com.amanuel.dojoSubscription.models.Role;
+import com.amanuel.dojoSubscription.models.User;
+import com.amanuel.dojoSubscription.repositories.UserRepository;
 
 @Service
 public class UserDetailsServiceImplementation implements UserDetailsService {

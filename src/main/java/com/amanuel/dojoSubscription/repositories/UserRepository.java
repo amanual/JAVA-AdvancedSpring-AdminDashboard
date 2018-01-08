@@ -1,11 +1,11 @@
-package com.amanuel.loginRegistration.repositories;
+package com.amanuel.dojoSubscription.repositories;
 
 import java.util.List;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import com.amanuel.loginRegistration.models.User;
+import com.amanuel.dojoSubscription.models.User;
 
 @Repository
 public interface UserRepository extends CrudRepository<User, Long>{

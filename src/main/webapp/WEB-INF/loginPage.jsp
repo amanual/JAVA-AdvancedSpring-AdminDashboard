@@ -6,10 +6,11 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel = "stylesheet" type = "text/css" href = "css/style.css">
 <title>Login Page</title>
 </head>
 <body>
-	<fieldset>
+	<div class = "login">
 		    <c:if test="${logoutMessage != null}">
 		        <c:out value="${logoutMessage}"></c:out>
 		    </c:if>
@@ -30,11 +31,11 @@
 		        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 		        <input type="submit" value="Login!"/>
 		    </form>
-	</fieldset>
+	</div>
 	
 	
 	
-	<fieldset>
+	<div>
 	    <h1>Register!</h1>
 	    
 	    <p><form:errors path="user.*"/></p>
@@ -64,6 +65,6 @@
 	        </p>
 	        <input type="submit" value="Register!"/>
 	    </form:form>
-	    </fieldset>
+	    </div>
 </body>
 </html>

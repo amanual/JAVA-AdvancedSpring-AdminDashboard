@@ -1,4 +1,4 @@
-package com.amanuel.loginRegistration.services;
+package com.amanuel.dojoSubscription.services;
 
 import java.util.List;
 
@@ -7,20 +7,25 @@ import javax.transaction.Transactional;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import com.amanuel.loginRegistration.models.Role;
-import com.amanuel.loginRegistration.models.User;
-import com.amanuel.loginRegistration.repositories.RoleRepository;
-import com.amanuel.loginRegistration.repositories.UserRepository;
+import com.amanuel.dojoSubscription.models.Pack;
+
+import com.amanuel.dojoSubscription.models.User;
+//import com.amanuel.dojoSubscription.models.Role;
+import com.amanuel.dojoSubscription.repositories.PackageRepository;
+import com.amanuel.dojoSubscription.repositories.RoleRepository;
+import com.amanuel.dojoSubscription.repositories.UserRepository;
 @Transactional
 @Service
 public class UserService {
     private UserRepository userRepository;
     private RoleRepository roleRepository;
+    private PackageRepository packageRepository;
     private BCryptPasswordEncoder bCryptPasswordEncoder;
-    
-    public UserService(UserRepository userRepository, RoleRepository roleRepository, BCryptPasswordEncoder bCryptPasswordEncoder)     {
+//    
+    public UserService(UserRepository userRepository, RoleRepository roleRepository,PackageRepository packageRepository, BCryptPasswordEncoder bCryptPasswordEncoder)     {
         this.userRepository = userRepository;
         this.roleRepository = roleRepository;
+        this.packageRepository = packageRepository;
         this.bCryptPasswordEncoder = bCryptPasswordEncoder;
     }
     
@@ -53,6 +58,37 @@ public class UserService {
     public User findById(Long id) {
         return userRepository.findById(id);
     }
+  
+    public void saveSelecion(User selection) {
+    		userRepository.save(selection);
+	}
+
+    
+    public List<Pack> findAllPackages(){
+    		return packageRepository.findAll();
+    }
+    
+    public void saveNewPackage(Pack pack) {
+    		packageRepository.save(pack);
+    }
+    public Pack findPackById(Long id) {
+    		return packageRepository.findOne(id);
+    }
+    
+    public void saveStatus(Pack status) {
+    		packageRepository.save(status);
+    }
 
 
+	public void saveUser(User myUser) {
+		userRepository.save(myUser);
+		
+	}
+
+
+	public void deletePack(Long id) {
+		packageRepository.delete(id);
+		
+	}
+   
 }

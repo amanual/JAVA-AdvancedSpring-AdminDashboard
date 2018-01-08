@@ -1,11 +1,11 @@
-package com.amanuel.loginRegistration.validator;
+package com.amanuel.dojoSubscription.validator;
 
 
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 
-import com.amanuel.loginRegistration.models.User;
+import com.amanuel.dojoSubscription.models.User;
 
 @Component
 public class UserValidator implements Validator {
